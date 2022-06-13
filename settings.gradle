@@ -4,6 +4,10 @@ pluginManagement {
 		maven {
 			url = 'https://repo.galacticraft.net/repository/common-proxy/'
 		}
+		maven { 
+			name 'TeamGalacticraft'
+			url 'https://repo.galacticraft.net/repository/maven/'
+		}
 		maven {
 			url = 'https://repo.galacticraft.net/repository/maven-common/'
 		}

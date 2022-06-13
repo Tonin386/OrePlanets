@@ -8,6 +8,7 @@ plugins {
 	id "net.galacticraft.gradle.addon" version "1.0.6"
 }
 
+
 apply plugin: 'net.minecraftforge.gradle'
 apply plugin: 'eclipse'
 apply plugin: 'maven-publish'
@@ -19,7 +20,7 @@ archivesBaseName = mod_id
 java.toolchain.languageVersion = JavaLanguageVersion.of(8)
 
 galacticraft {
-	useLatestRelease()
+	gcVersion('4.0.2.283')
 }
 
 minecraft {

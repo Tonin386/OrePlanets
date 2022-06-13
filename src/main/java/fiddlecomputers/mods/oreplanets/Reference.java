@@ -1,4 +1,4 @@
-package fiddlecomputers.mods.oreplanets.core;
+package fiddlecomputers.mods.oreplanets;
 
 public class Reference {
 	

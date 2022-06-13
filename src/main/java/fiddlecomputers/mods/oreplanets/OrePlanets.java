@@ -1,4 +1,4 @@
-package fiddlecomputers.mods.oreplanets.core;
+package fiddlecomputers.mods.oreplanets;
 
 import fiddlecomputers.mods.oreplanets.proxy.IProxy;
 import net.minecraftforge.fml.common.Mod;
@@ -20,14 +20,14 @@ import net.minecraftforge.fml.common.event.FMLServerStoppingEvent;
         dependencies = Reference.MOD_DEPENDENCIES,
         acceptedMinecraftVersions = Reference.MOD_MC_VERSION_RANGE
 )
-public class OrePlanetsCore {
+public class OrePlanets {
     
     @SidedProxy(clientSide = "fiddlecomputers.mods.oreplanets.proxy.ClientProxy", serverSide = "fiddlecomputers.mods.oreplanets.proxy.CommonProxy")
     public static IProxy proxy;
 	
 	@Instance(Reference.MOD_ID)
-	public static OrePlanetsCore _instance;
-    public OrePlanetsCore() {}
+	public static OrePlanets _instance;
+    public OrePlanets() {}
         
     @EventHandler
     public static void preInit(FMLPreInitializationEvent event) {
