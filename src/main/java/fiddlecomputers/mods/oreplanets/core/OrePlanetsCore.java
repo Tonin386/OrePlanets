@@ -1,6 +1,6 @@
-package io.github.addonmod;
+package fiddlecomputers.mods.oreplanets.core;
 
-import io.github.addonmod.proxy.IProxy;
+import fiddlecomputers.mods.oreplanets.proxy.IProxy;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.Mod.EventHandler;
 import net.minecraftforge.fml.common.Mod.Instance;
@@ -20,14 +20,14 @@ import net.minecraftforge.fml.common.event.FMLServerStoppingEvent;
         dependencies = Reference.MOD_DEPENDENCIES,
         acceptedMinecraftVersions = Reference.MOD_MC_VERSION_RANGE
 )
-public class AddonMod {
+public class OrePlanetsCore {
     
-    @SidedProxy(clientSide = "io.github.examplemod.proxy.ClientProxy", serverSide = "io.github.examplemod.proxy.CommonProxy")
+    @SidedProxy(clientSide = "fiddlecomputers.mods.oreplanets.proxy.ClientProxy", serverSide = "fiddlecomputers.mods.oreplanets.proxy.CommonProxy")
     public static IProxy proxy;
 	
 	@Instance(Reference.MOD_ID)
-	public static AddonMod _instance;
-    public AddonMod() {}
+	public static OrePlanetsCore _instance;
+    public OrePlanetsCore() {}
         
     @EventHandler
     public static void preInit(FMLPreInitializationEvent event) {

@@ -1,4 +1,4 @@
-package io.github.addonmod.proxy;
+package fiddlecomputers.mods.oreplanets.proxy;
 
 import javax.annotation.Nullable;
 

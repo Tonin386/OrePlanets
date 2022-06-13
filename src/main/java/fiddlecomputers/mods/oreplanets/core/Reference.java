@@ -1,4 +1,4 @@
-package io.github.addonmod;
+package fiddlecomputers.mods.oreplanets.core;
 
 public class Reference {
 	
