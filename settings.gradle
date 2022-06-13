@@ -1,0 +1,20 @@
+pluginManagement {
+    repositories {
+		mavenLocal()
+		maven {
+			url = 'https://repo.galacticraft.net/repository/common-proxy/'
+		}
+		maven {
+			url = 'https://repo.galacticraft.net/repository/maven-common/'
+		}
+		resolutionStrategy {
+			eachPlugin {
+				if (requested.id.id == "net.minecraftforge.gradle") {
+					useModule("${requested.id}:ForgeGradle:5.1.+")
+				}
+			}
+		}
+    }
+}
+
+rootProject.name = "addon-template"
