@@ -1,14 +1,14 @@
-package fiddlecomputers.mods.oreplanets.planets.diamondstar.client.sky;
+package fiddlecomputers.mods.oreplanets.planets.diamondplanet.client.sky;
 
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.multiplayer.WorldClient;
 import net.minecraft.client.renderer.GlStateManager;
 import fiddlecomputers.mods.oreplanets.client.renderer.sky.SkyProviderBaseOP;
 
-public class SkyProviderDiamondStar extends SkyProviderBaseOP
+public class SkyProviderDiamondPlanet extends SkyProviderBaseOP
 {
 
-    public SkyProviderDiamondStar(float solarSize)
+    public SkyProviderDiamondPlanet(float solarSize)
     {
         this.solarSize = 50.0F * solarSize;
     }

@@ -7,11 +7,11 @@ import fiddlecomputers.mods.oreplanets.config.ConfigManagerOP;
 public class OPDimensions
 {
     public static DimensionType SPACE_NETHER;
-    public static DimensionType DIAMONDSTAR;
+    public static DimensionType DIAMONDPLANET;
 
     public static void init()
     {
         OPDimensions.SPACE_NETHER = WorldUtil.getDimensionTypeById(ConfigManagerOP.oreplanets_dimension.idDimensionSpaceNether);
-        OPDimensions.DIAMONDSTAR = WorldUtil.getDimensionTypeById(ConfigManagerOP.oreplanets_dimension.idDimensionDiamondStar);
+        OPDimensions.DIAMONDPLANET = WorldUtil.getDimensionTypeById(ConfigManagerOP.oreplanets_dimension.idDimensionDiamondPlanet);
     }
 }

@@ -1,4 +1,4 @@
-package fiddlecomputers.mods.oreplanets.planets.diamondstar.dimension;
+package fiddlecomputers.mods.oreplanets.planets.diamondplanet.dimension;
 
 import java.util.Arrays;
 import java.util.List;
@@ -15,12 +15,12 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 import fiddlecomputers.mods.oreplanets.config.ConfigManagerOP;
 import fiddlecomputers.mods.oreplanets.init.OPDimensions;
 import fiddlecomputers.mods.oreplanets.init.OPPlanets;
-import fiddlecomputers.mods.oreplanets.planets.diamondstar.client.sky.SkyProviderDiamondStar;
-import fiddlecomputers.mods.oreplanets.planets.diamondstar.world.gen.BiomeProviderDiamondStar;
-import fiddlecomputers.mods.oreplanets.planets.diamondstar.world.gen.ChunkGeneratorDiamondStar;
+import fiddlecomputers.mods.oreplanets.planets.diamondplanet.client.sky.SkyProviderDiamondPlanet;
+import fiddlecomputers.mods.oreplanets.planets.diamondplanet.world.gen.BiomeProviderDiamondPlanet;
+import fiddlecomputers.mods.oreplanets.planets.diamondplanet.world.gen.ChunkGeneratorDiamondPlanet;
 import fiddlecomputers.mods.oreplanets.utils.dimension.WorldProviderOP;
 
-public class WorldProviderDiamondStar extends WorldProviderOP
+public class WorldProviderDiamondPlanet extends WorldProviderOP
 {
     @Override
     public Vector3 getFogColor()
@@ -77,7 +77,7 @@ public class WorldProviderDiamondStar extends WorldProviderOP
     @Override
     public boolean canSpaceshipTierPass(int tier)
     {
-        return tier >= ConfigManagerOP.oreplanets_planet_settings.planetDiamondStarTier;
+        return tier >= ConfigManagerOP.oreplanets_planet_settings.planetDiamondPlanetTier;
     }
 
     @Override
@@ -89,7 +89,7 @@ public class WorldProviderDiamondStar extends WorldProviderOP
     @Override
     public CelestialBody getCelestialBody()
     {
-        return OPPlanets.DIAMONDSTAR;
+        return OPPlanets.DIAMONDPLANET;
     }
 
     @Override
@@ -108,26 +108,26 @@ public class WorldProviderDiamondStar extends WorldProviderOP
     @Override
     protected void renderSky()
     {
-        this.setSkyRenderer(new SkyProviderDiamondStar(this.getSolarSize()));
+        this.setSkyRenderer(new SkyProviderDiamondPlanet(this.getSolarSize()));
     }
 
     @Override
     public void init()
     {
         super.init();
-        this.biomeProvider = new BiomeProviderDiamondStar();
+        this.biomeProvider = new BiomeProviderDiamondPlanet();
     }
 
     @Override
     public IChunkGenerator createChunkGenerator()
     {
-        return new ChunkGeneratorDiamondStar(this.world, this.world.getSeed());
+        return new ChunkGeneratorDiamondPlanet(this.world, this.world.getSeed());
     }
 
     @Override
     public DimensionType getDimensionType()
     {
-        return OPDimensions.DIAMONDSTAR;
+        return OPDimensions.DIAMONDPLANET;
     }
 
     @Override

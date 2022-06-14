@@ -1,4 +1,4 @@
-package fiddlecomputers.mods.oreplanets.planets.diamondstar.world.gen;
+package fiddlecomputers.mods.oreplanets.planets.diamondplanet.world.gen;
 
 import javax.annotation.Nullable;
 
@@ -10,16 +10,16 @@ import net.minecraft.world.World;
 import net.minecraft.world.biome.Biome;
 import net.minecraft.world.chunk.Chunk;
 import net.minecraft.world.chunk.ChunkPrimer;
-import fiddlecomputers.mods.oreplanets.planets.diamondstar.world.gen.structure.MapGenAbandonedSatellite;
+import fiddlecomputers.mods.oreplanets.planets.diamondplanet.world.gen.structure.MapGenAbandonedSatellite;
 import fiddlecomputers.mods.oreplanets.utils.world.gen.ChunkGeneratorBaseOP;
 //import stevekung.mods.stevekunglib.world.gen.MapGenCavesBase;
 //import stevekung.mods.stevekunglib.world.gen.WorldGenLiquidLake;
 
-public class ChunkGeneratorDiamondStar extends ChunkGeneratorBaseOP
+public class ChunkGeneratorDiamondPlanet extends ChunkGeneratorBaseOP
 {
     private final MapGenAbandonedSatellite abandonedSatellite = new MapGenAbandonedSatellite();
 
-    public ChunkGeneratorDiamondStar(World world, long seed)
+    public ChunkGeneratorDiamondPlanet(World world, long seed)
     {
         super(world, seed);
     }

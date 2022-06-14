@@ -65,16 +65,16 @@ public class ConfigManagerOP
         @Config.Name(value = "Space Nether Dimension ID")
         public int idDimensionSpaceNether = -2541;
 
-        @Config.Name(value = "Diamond Star Dimension ID")
-        public int idDimensionDiamondStar = -2542;
+        @Config.Name(value = "Diamond Planet Dimension ID")
+        public int idDimensionDiamondPlanet = -2542;
     }
 
     // Planet Settings
     public static class PlanetSettings
     {
-        @Config.Name(value = "Diamond Star Planet Tier")
+        @Config.Name(value = "Diamond Planet Planet Tier")
         @Config.RequiresMcRestart
-        public int planetDiamondStarTier = 3;
+        public int planetDiamondPlanetTier = 3;
     }
 
     // World Gen Settings
@@ -84,8 +84,8 @@ public class ConfigManagerOP
         @Config.Comment(value = "Common Ores are Copper, Tin, Aluminum, vanilla ores.")
         public boolean enableCommonOreGenAllPlanets = true;
 
-        @Config.Name(value = "Enable Common Ore on Diamond Star")
-        public boolean enableCommonDionaOre = true;
+        @Config.Name(value = "Enable Common Ore on Diamond Planet")
+        public boolean enableCommonDiamondPlanetOre = false;
     }
 
     // Others

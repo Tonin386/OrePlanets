@@ -1,4 +1,4 @@
-package fiddlecomputers.mods.oreplanets.planets.diamondstar.world.gen.structure;
+package fiddlecomputers.mods.oreplanets.planets.diamondplanet.world.gen.structure;
 
 import java.util.Random;
 
