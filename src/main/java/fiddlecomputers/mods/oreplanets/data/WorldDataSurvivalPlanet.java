@@ -8,7 +8,7 @@ public class WorldDataSurvivalPlanet extends WorldSavedData
     public static final String saveDataID = "SurvivalPlanetData";
     public boolean hasSurvivalPlanetData;
     public boolean disableMessage;
-    public String survivalPlanetName = "";
+    public String survivalPlanetName = "Diamond Star";
 
     public WorldDataSurvivalPlanet(String data)
     {

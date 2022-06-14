@@ -22,7 +22,7 @@ public class CelestialRegistryUtils
         planet.setRelativeOrbitTime(orbitTime);
         planet.setRelativeSize(size);
         planet.setTierRequired(tier);
-        planet.setBodyIcon(new ResourceLocation("moreplanets:textures/gui/celestialbodies/" + name + ".png"));
+        planet.setBodyIcon(new ResourceLocation("oreplanets:textures/gui/celestialbodies/" + name + ".png"));
         return planet;
     }
 
@@ -35,7 +35,7 @@ public class CelestialRegistryUtils
         moon.setRelativeOrbitTime(orbitTime);
         moon.setRelativeSize(size);
         moon.setTierRequired(tier);
-        moon.setBodyIcon(new ResourceLocation("moreplanets:textures/gui/celestialbodies/" + name + ".png"));
+        moon.setBodyIcon(new ResourceLocation("oreplanets:textures/gui/celestialbodies/" + name + ".png"));
         return moon;
     }
 
@@ -47,7 +47,7 @@ public class CelestialRegistryUtils
         satellite.setRelativeOrbitTime(orbitTime);
         satellite.setRelativeSize(size);
         satellite.setTierRequired(tier);
-        satellite.setBodyIcon(new ResourceLocation("moreplanets:textures/gui/celestialbodies/" + name + ".png"));
+        satellite.setBodyIcon(new ResourceLocation("oreplanets:textures/gui/celestialbodies/" + name + ".png"));
         return satellite;
     }
 
@@ -56,7 +56,7 @@ public class CelestialRegistryUtils
         solarSystem = new SolarSystem(solarName, "milky_way").setMapPosition(galaxyPos);
         star = new Star(starName).setParentSolarSystem(solarSystem);
         star.setTierRequired(-1);
-        star.setBodyIcon(new ResourceLocation("moreplanets:textures/gui/celestialbodies/" + starResource + ".png"));
+        star.setBodyIcon(new ResourceLocation("oreplanets:textures/gui/celestialbodies/" + starResource + ".png"));
         solarSystem.setMainStar(star);
         return solarSystem;
     }
@@ -107,6 +107,6 @@ public class CelestialRegistryUtils
 
     public static void registerRocketGui(Class<? extends WorldProvider> clazz, String resource)
     {
-        GalacticraftRegistry.registerRocketGui(clazz, new ResourceLocation("moreplanets:textures/gui/rocket/" + resource + ".png"));
+        GalacticraftRegistry.registerRocketGui(clazz, new ResourceLocation("oreplanets:textures/gui/rocket/" + resource + ".png"));
     }
 }

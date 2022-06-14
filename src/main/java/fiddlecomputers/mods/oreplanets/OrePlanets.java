@@ -183,9 +183,9 @@ public class OrePlanets {
         info.modId = Reference.MOD_ID;
         info.name = Reference.MOD_NAME;
         info.version = Reference.MOD_VERSION;
-        info.description = "An add-on adds new exotic planets into Galacticraft!";
+        info.description = "An add-on adds new exotic resources planets into Galacticraft!";
         info.url = "";
         info.credits = "All credits goes to Galacticraft Sources/API, Translators and some people who helped.";
-        info.authorList = Lists.newArrayList("SteveKunG", "PloyiinGz");
+        info.authorList = Lists.newArrayList("FiddleComputers");
     }
 }

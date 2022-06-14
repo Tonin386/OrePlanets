@@ -20,7 +20,6 @@ public class OPPlanets {
         // Planets
         OPPlanets.SPACE_NETHER = CelestialRegistryUtils.createPlanet("space_nether", GalacticraftCore.solarSystemSol, 0.0F, 0.25F, 1.0F, 1.0F, -1, ConfigManagerOP.oreplanets_dimension.idDimensionSpaceNether, WorldProviderSpaceNether.class);
         OPPlanets.DIAMONDSTAR = CelestialRegistryUtils.createPlanet("diamondstar", GalacticraftCore.solarSystemSol, -14.25F, 4.25F, 20.0F, 0.876F, ConfigManagerOP.oreplanets_planet_settings.planetDiamondStarTier, ConfigManagerOP.oreplanets_dimension.idDimensionDiamondStar, WorldProviderDiamondStar.class);
-        
         // Planets
         CelestialRegistryUtils.setAtmosphereComponentList(OPPlanets.DIAMONDSTAR, EnumAtmosphericGas.ARGON, EnumAtmosphericGas.HELIUM);
         CelestialRegistryUtils.setAtmosphere(OPPlanets.DIAMONDSTAR, false, false, false, 0.0F, 0.0F, 0.0F);
@@ -35,7 +34,7 @@ public class OPPlanets {
 
         CelestialRegistryUtils.registerPlanet(OPPlanets.DIAMONDSTAR);
         CelestialRegistryUtils.registerTeleportType(WorldProviderDiamondStar.class, teleport);
-        CelestialRegistryUtils.registerRocketGui(WorldProviderDiamondStar.class, "diona");
+        CelestialRegistryUtils.registerRocketGui(WorldProviderDiamondStar.class, "Diamond Star");
     }
 
 }
