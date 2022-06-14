@@ -1,8 +1,14 @@
-package fiddlecomputers.mods.oreplanets.planets.diamondplanet.dimension;
+package fiddlecomputers.mods.oreplanets.dimension;
 
 import java.util.Arrays;
 import java.util.List;
 
+import fiddlecomputers.mods.oreplanets.config.ConfigManagerOP;
+import fiddlecomputers.mods.oreplanets.init.OPDimensions;
+import fiddlecomputers.mods.oreplanets.init.OPPlanets;
+import fiddlecomputers.mods.oreplanets.planets.exanterra.world.gen.BiomeProviderExanterra;
+import fiddlecomputers.mods.oreplanets.planets.exanterra.world.gen.ChunkGeneratorExanterra;
+import fiddlecomputers.mods.oreplanets.utils.dimension.WorldProviderOP;
 import micdoodle8.mods.galacticraft.api.galaxies.CelestialBody;
 import micdoodle8.mods.galacticraft.api.vector.Vector3;
 import net.minecraft.block.Block;
@@ -12,16 +18,10 @@ import net.minecraft.world.DimensionType;
 import net.minecraft.world.gen.IChunkGenerator;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
-import fiddlecomputers.mods.oreplanets.config.ConfigManagerOP;
-import fiddlecomputers.mods.oreplanets.init.OPDimensions;
-import fiddlecomputers.mods.oreplanets.init.OPPlanets;
-import fiddlecomputers.mods.oreplanets.planets.diamondplanet.client.sky.SkyProviderDiamondPlanet;
-import fiddlecomputers.mods.oreplanets.planets.diamondplanet.world.gen.BiomeProviderDiamondPlanet;
-import fiddlecomputers.mods.oreplanets.planets.diamondplanet.world.gen.ChunkGeneratorDiamondPlanet;
-import fiddlecomputers.mods.oreplanets.utils.dimension.WorldProviderOP;
 
-public class WorldProviderDiamondPlanet extends WorldProviderOP
-{
+public class WorldProviderExanterra extends WorldProviderOP {
+
+	//TODO
     @Override
     public Vector3 getFogColor()
     {
@@ -29,6 +29,7 @@ public class WorldProviderDiamondPlanet extends WorldProviderOP
         return new Vector3(24.0D / 255.0D * f, 24.0D / 255.0D * f, 24.0D / 255.0D * f);
     }
 
+    //TODO
     @Override
     public Vector3 getSkyColor()
     {
@@ -38,9 +39,10 @@ public class WorldProviderDiamondPlanet extends WorldProviderOP
     @Override
     public long getDayLength()
     {
-        return 96000L;
+        return 25000L;
     }
 
+    //TODO
     @Override
     @SideOnly(Side.CLIENT)
     public float getStarBrightness(float partialTicks)
@@ -51,6 +53,7 @@ public class WorldProviderDiamondPlanet extends WorldProviderOP
         return value * value * 0.5F + 0.3F;
     }
 
+    //TODO
     @Override
     @SideOnly(Side.CLIENT)
     public float getSunBrightness(float partialTicks)
@@ -65,31 +68,31 @@ public class WorldProviderDiamondPlanet extends WorldProviderOP
     @Override
     public double getSolarEnergyMultiplier()
     {
-        return 2.5D;
+        return 1.25D;
     }
 
     @Override
     public float getGravity()
     {
-        return 0.065F;
+        return 0.008F;
     }
 
     @Override
     public boolean canSpaceshipTierPass(int tier)
     {
-        return tier >= ConfigManagerOP.oreplanets_planet_settings.planetDiamondPlanetTier;
+        return tier >= ConfigManagerOP.oreplanets_planet_settings.planetExanterraTier;
     }
 
     @Override
     public float getFallDamageModifier()
     {
-        return 0.4F;
+        return 1.0F;
     }
 
     @Override
     public CelestialBody getCelestialBody()
     {
-        return OPPlanets.DIAMONDPLANET;
+        return OPPlanets.EXANTERRA;
     }
 
     @Override
@@ -97,42 +100,43 @@ public class WorldProviderDiamondPlanet extends WorldProviderOP
     {
         if (this.isDaytime())
         {
-            return -0.5F;
+            return -0.05F;
         }
         else
         {
-            return -1.75F;
+            return -0.25F;
         }
     }
 
+    //TODO
     @Override
     protected void renderSky()
     {
-        this.setSkyRenderer(new SkyProviderDiamondPlanet(this.getSolarSize()));
+        //this.setSkyRenderer(new SkyProviderExanterra(this.getSolarSize()));
     }
 
     @Override
     public void init()
     {
         super.init();
-        this.biomeProvider = new BiomeProviderDiamondPlanet();
+        this.biomeProvider = new BiomeProviderExanterra();
     }
 
     @Override
     public IChunkGenerator createChunkGenerator()
     {
-        return new ChunkGeneratorDiamondPlanet(this.world, this.world.getSeed());
+        return new ChunkGeneratorExanterra(this.world, this.world.getSeed());
     }
 
     @Override
     public DimensionType getDimensionType()
     {
-        return OPDimensions.DIAMONDPLANET;
+        return OPDimensions.EXANTERRA;
     }
 
     @Override
     public List<Block> getSurfaceBlocks()
     {
-        return Arrays.asList(Blocks.DIAMOND_BLOCK);
+    	return Arrays.asList(Blocks.LOG);
     }
 }

@@ -29,8 +29,6 @@ import net.minecraft.world.gen.structure.StructureComponent;
 import net.minecraft.world.gen.structure.template.PlacementSettings;
 import net.minecraft.world.gen.structure.template.Template;
 import net.minecraft.world.gen.structure.template.TemplateManager;
-import fiddlecomputers.mods.oreplanets.init.OPLootTables;
-import fiddlecomputers.mods.oreplanets.utils.tileentity.TileEntityChestOP;
 import fiddlecomputers.mods.oreplanets.utils.world.gen.feature.ElectricFireBlockProcessor;
 
 public class StructureAbandonedSatellitePieces extends StructureComponent
@@ -138,12 +136,6 @@ public class StructureAbandonedSatellitePieces extends StructureComponent
                 {
                     BlockPos blockpos2 = entry.getKey();
                     world.setBlockState(blockpos2, GCBlocks.sealableBlock.getDefaultState().withProperty(BlockEnclosed.TYPE, BlockEnclosed.EnumEnclosedBlockType.ALUMINUM_WIRE_HEAVY), 3);
-                    TileEntity tile = world.getTileEntity(blockpos2.down());
-
-                    if (tile instanceof TileEntityChestOP)
-                    {
-                        ((TileEntityChestOP)tile).setLootTable(OPLootTables.CRASHED_ALIEN_PROBE, rand.nextLong());
-                    }
                 }
                 else if ("energy_storage".equals(entry.getValue()))
                 {

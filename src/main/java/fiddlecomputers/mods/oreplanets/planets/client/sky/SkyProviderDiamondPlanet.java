@@ -1,4 +1,4 @@
-package fiddlecomputers.mods.oreplanets.planets.diamondplanet.client.sky;
+package fiddlecomputers.mods.oreplanets.planets.client.sky;
 
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.multiplayer.WorldClient;

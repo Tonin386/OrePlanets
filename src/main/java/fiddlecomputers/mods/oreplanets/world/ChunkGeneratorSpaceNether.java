@@ -1,4 +1,5 @@
 package fiddlecomputers.mods.oreplanets.world;
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.annotation.Nullable;
@@ -181,21 +182,27 @@ public class ChunkGeneratorSpaceNether extends ChunkGeneratorBaseOP
     }
 
     @Override
-    protected IBlockState getTopBlock()
+    protected List<IBlockState> getTopBlocks()
     {
-        return Blocks.NETHERRACK.getDefaultState();
+    	List<IBlockState> returnList = new ArrayList<IBlockState>();
+    	returnList.add(Blocks.NETHERRACK.getDefaultState());
+        return returnList;
     }
 
     @Override
-    protected IBlockState getSubBlock()
+    protected List<IBlockState> getSubBlocks()
     {
-        return Blocks.NETHERRACK.getDefaultState();
+    	List<IBlockState> returnList = new ArrayList<IBlockState>();
+    	returnList.add(Blocks.NETHERRACK.getDefaultState());
+        return returnList;
     }
 
     @Override
-    protected IBlockState getStoneBlock()
+    protected List<IBlockState> getStoneBlocks()
     {
-        return Blocks.NETHERRACK.getDefaultState();
+    	List<IBlockState> returnList = new ArrayList<IBlockState>();
+    	returnList.add(Blocks.NETHERRACK.getDefaultState());
+        return returnList;
     }
 
     @Override

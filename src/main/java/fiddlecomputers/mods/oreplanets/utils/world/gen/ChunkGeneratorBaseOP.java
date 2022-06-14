@@ -1,5 +1,6 @@
 package fiddlecomputers.mods.oreplanets.utils.world.gen;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 import java.util.Set;
@@ -198,9 +199,25 @@ public abstract class ChunkGeneratorBaseOP implements IChunkGenerator
             {
                 int noise = (int) (this.noise4.evalNoise(x + chunkX * 16, z * chunkZ * 16) / 3.0D + 3.0D + this.rand.nextDouble() * 0.25D);
                 int j = -1;
-                IBlockState topBlock = this.getTopBlock();
-                IBlockState fillBlock = this.getSubBlock();
-
+                
+                List<IBlockState> topBlocksState = this.getTopBlocks();
+                List<Block> topBlocks = new ArrayList<Block>();            
+                for(int i = 0; i<topBlocksState.size();i++) {
+                	topBlocks.add(topBlocksState.get(i).getBlock());
+                }
+                
+                List<IBlockState> fillBlocksState = this.getSubBlocks();
+                List<Block> fillBlocks = new ArrayList<Block>();
+                for(int i = 0; i<fillBlocksState.size();i++) {
+                	fillBlocks.add(fillBlocksState.get(i).getBlock());
+                }
+                
+                List<IBlockState> stoneBlocksState = this.getStoneBlocks();
+                List<Block> stoneBlocks = new ArrayList<Block>();
+                for(int i = 0; i<stoneBlocksState.size();i++) {
+                	stoneBlocks.add(stoneBlocksState.get(i).getBlock());
+                }
+                
                 for (int y = 255; y >= 0; --y)
                 {
                     if (y <= 0 + this.rand.nextInt(5))
@@ -215,36 +232,37 @@ public abstract class ChunkGeneratorBaseOP implements IChunkGenerator
                         {
                             j = -1;
                         }
-                        else if (iblockstate2.getBlock() == this.getStoneBlock().getBlock())
+                        else if (stoneBlocks.contains(iblockstate2.getBlock()))
                         {
                             if (j == -1)
                             {
                                 if (noise <= 0)
                                 {
-                                    topBlock = Blocks.AIR.getDefaultState();
-                                    fillBlock = this.getStoneBlock();
+                                    topBlocksState.clear();
+                                    topBlocksState.add(Blocks.AIR.getDefaultState());
+                                    fillBlocksState = this.getStoneBlocks();
                                 }
                                 else if (y >= seaLevel - 4 && y <= seaLevel + 1)
                                 {
-                                    topBlock = this.getTopBlock();
-                                    fillBlock = this.getSubBlock();
+                                    topBlocksState = this.getTopBlocks();
+                                    fillBlocksState = this.getSubBlocks();
                                 }
 
                                 j = noise;
 
                                 if (y >= seaLevel - 1)
                                 {
-                                    chunk.setBlockState(x, y, z, topBlock);
+                                    chunk.setBlockState(x, y, z, topBlocksState.get((int)(Math.random() * (topBlocksState.size()))));
                                 }
                                 else if (y < seaLevel - 1 && y >= seaLevel - 2)
                                 {
-                                    chunk.setBlockState(x, y, z, fillBlock);
+                                    chunk.setBlockState(x, y, z, fillBlocksState.get((int)(Math.random() * (fillBlocksState.size()))));
                                 }
                             }
                             else if (j > 0)
                             {
                                 --j;
-                                chunk.setBlockState(x, y, z, fillBlock);
+                                chunk.setBlockState(x, y, z, fillBlocksState.get((int)(Math.random() * (fillBlocksState.size()))));
                             }
                         }
                     }
@@ -288,7 +306,7 @@ public abstract class ChunkGeneratorBaseOP implements IChunkGenerator
                 {
                     if (y < this.getTerrainHeight() + yDev)
                     {
-                        chunk.setBlockState(x, y, z, this.getStoneBlock());
+                        chunk.setBlockState(x, y, z, this.getStoneBlocks().get((int)(Math.random() * (this.getStoneBlocks().size()))));
                     }
                 }
             }
@@ -386,7 +404,7 @@ public abstract class ChunkGeneratorBaseOP implements IChunkGenerator
                             {
                                 if ((lvt_45_1_ += d16) > 0.0D)
                                 {
-                                    primer.setBlockState(i * 4 + k2, i2 * 8 + j2, l * 4 + l2, this.getStoneBlock());
+                                    primer.setBlockState(i * 4 + k2, i2 * 8 + j2, l * 4 + l2, this.getStoneBlocks().get((int)(Math.random() * (this.getStoneBlocks().size()))));
                                 }
                                 else if (i2 * 8 + j2 < this.world.getSeaLevel())
                                 {
@@ -729,7 +747,7 @@ public abstract class ChunkGeneratorBaseOP implements IChunkGenerator
     protected abstract void preGenerateChunk(ChunkPrimer primer, int chunkX, int chunkZ);
     protected abstract void generateChunk(ChunkPrimer primer, int chunkX, int chunkZ);
     protected abstract void populate(BlockPos pos, ChunkPos chunkpos, Biome biome, int chunkX, int chunkZ, int x, int z);
-    protected abstract IBlockState getTopBlock();
-    protected abstract IBlockState getSubBlock();
-    protected abstract IBlockState getStoneBlock();
+    protected abstract List<IBlockState> getTopBlocks();
+    protected abstract List<IBlockState> getSubBlocks();
+    protected abstract List<IBlockState> getStoneBlocks();
 }
