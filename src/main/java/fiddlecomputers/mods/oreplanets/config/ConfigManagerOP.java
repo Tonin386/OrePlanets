@@ -67,6 +67,9 @@ public class ConfigManagerOP
 
         @Config.Name(value = "Diamond Planet Dimension ID")
         public int idDimensionDiamondPlanet = -2542;
+
+        @Config.Name(value = "Exanterra Dimension ID")
+        public int idDimensionExanterra = -2543;
     }
 
     // Planet Settings
@@ -75,6 +78,11 @@ public class ConfigManagerOP
         @Config.Name(value = "Diamond Planet Planet Tier")
         @Config.RequiresMcRestart
         public int planetDiamondPlanetTier = 3;
+        
+
+        @Config.Name(value = "Exanterra Planet Tier")
+        @Config.RequiresMcRestart
+		public int planetExanterraTier = 1;
     }
 
     // World Gen Settings
@@ -86,6 +94,9 @@ public class ConfigManagerOP
 
         @Config.Name(value = "Enable Common Ore on Diamond Planet")
         public boolean enableCommonDiamondPlanetOre = false;
+        
+        @Config.Name(value = "Enable Common Ore on Exanterra")
+        public boolean enableCommonExanterraOre = false;
     }
 
     // Others

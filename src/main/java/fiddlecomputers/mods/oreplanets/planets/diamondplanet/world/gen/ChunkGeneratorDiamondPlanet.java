@@ -1,5 +1,8 @@
 package fiddlecomputers.mods.oreplanets.planets.diamondplanet.world.gen;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import javax.annotation.Nullable;
 
 import net.minecraft.block.state.IBlockState;
@@ -12,8 +15,6 @@ import net.minecraft.world.chunk.Chunk;
 import net.minecraft.world.chunk.ChunkPrimer;
 import fiddlecomputers.mods.oreplanets.planets.diamondplanet.world.gen.structure.MapGenAbandonedSatellite;
 import fiddlecomputers.mods.oreplanets.utils.world.gen.ChunkGeneratorBaseOP;
-//import stevekung.mods.stevekunglib.world.gen.MapGenCavesBase;
-//import stevekung.mods.stevekunglib.world.gen.WorldGenLiquidLake;
 
 public class ChunkGeneratorDiamondPlanet extends ChunkGeneratorBaseOP
 {
@@ -99,20 +100,26 @@ public class ChunkGeneratorDiamondPlanet extends ChunkGeneratorBaseOP
     }
 
     @Override
-    protected IBlockState getTopBlock()
+    protected List<IBlockState> getTopBlocks()
     {
-        return Blocks.DIAMOND_BLOCK.getDefaultState();
+    	List<IBlockState> returnList = new ArrayList<IBlockState>();
+    	returnList.add(Blocks.DIAMOND_BLOCK.getDefaultState());
+        return returnList;
     }
 
     @Override
-    protected IBlockState getSubBlock()
+    protected List<IBlockState> getSubBlocks()
     {
-        return Blocks.DIAMOND_BLOCK.getDefaultState();
+    	List<IBlockState> returnList = new ArrayList<IBlockState>();
+    	returnList.add(Blocks.DIAMOND_BLOCK.getDefaultState());
+        return returnList;
     }
 
     @Override
-    protected IBlockState getStoneBlock()
+    protected List<IBlockState> getStoneBlocks()
     {
-        return Blocks.DIAMOND_BLOCK.getDefaultState();
+    	List<IBlockState> returnList = new ArrayList<IBlockState>();
+    	returnList.add(Blocks.DIAMOND_BLOCK.getDefaultState());
+        return returnList;
     }
 }
