@@ -67,6 +67,9 @@ public class ConfigManagerOP
 
         @Config.Name(value = "Exanterra Dimension ID")
         public int idDimensionExanterra = -2543;
+        
+        @Config.Name(value = "Auraferrum Dimension ID")
+        public int idDimensionAuraferrum = -2544;
     }
 
     // Planet Settings
@@ -80,6 +83,10 @@ public class ConfigManagerOP
         @Config.Name(value = "Exanterra Planet Tier")
         @Config.RequiresMcRestart
 		public int planetExanterraTier = 1;
+        
+        @Config.Name(value = "Auraferrum Planet Tier")
+        @Config.RequiresMcRestart
+        public int planetAuraferrumTier = 2;
     }
 
     // World Gen Settings
@@ -94,6 +101,9 @@ public class ConfigManagerOP
         
         @Config.Name(value = "Enable Common Ore on Exanterra")
         public boolean enableCommonExanterraOre = false;
+        
+        @Config.Name(value = "Enable Common Ore on Auraferrum")
+        public boolean enableCommonAuraferrumOre = true;
     }
 
     // Others

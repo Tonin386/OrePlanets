@@ -15,7 +15,9 @@ import net.minecraft.world.chunk.Chunk;
 import net.minecraft.world.chunk.ChunkPrimer;
 import fiddlecomputers.mods.oreplanets.planets.diamondplanet.world.gen.structure.MapGenAbandonedSatellite;
 import fiddlecomputers.mods.oreplanets.utils.world.gen.ChunkGeneratorBaseOP;
+import fiddlecomputers.mods.oreplanets.world.gen.WorldGenLiquidLake;
 
+//TODO try to populate with frozen lakes
 public class ChunkGeneratorDiamondPlanet extends ChunkGeneratorBaseOP
 {
     private final MapGenAbandonedSatellite abandonedSatellite = new MapGenAbandonedSatellite();
@@ -41,6 +43,14 @@ public class ChunkGeneratorDiamondPlanet extends ChunkGeneratorBaseOP
     protected void populate(BlockPos pos, ChunkPos chunkpos, Biome biome, int chunkX, int chunkZ, int x, int z)
     {
         this.abandonedSatellite.generateStructure(this.world, this.rand, chunkpos);
+        int y = this.rand.nextInt(this.rand.nextInt(248) + 8);
+        if (this.rand.nextInt(8) == 0)
+        {
+            if (y < 90)
+            {
+            	new WorldGenLiquidLake(Blocks.PACKED_ICE.getDefaultState(), Blocks.SAND.getDefaultState()).generate(this.world, this.rand, pos.add(this.rand.nextInt(16) + 8, y, this.rand.nextInt(16) + 8));
+            }
+        }
     }
 
     @Override
@@ -84,10 +94,9 @@ public class ChunkGeneratorDiamondPlanet extends ChunkGeneratorBaseOP
     protected List<IBlockState> getSubBlocks()
     {
     	List<IBlockState> returnList = new ArrayList<IBlockState>();
-    	returnList.add(Blocks.QUARTZ_BLOCK.getDefaultState());
-    	returnList.add(Blocks.QUARTZ_BLOCK.getDefaultState());
-    	returnList.add(Blocks.QUARTZ_BLOCK.getDefaultState());
-    	returnList.add(Blocks.DIAMOND_BLOCK.getDefaultState());
+    	
+    	returnList.addAll(populateLayer(Blocks.QUARTZ_BLOCK.getDefaultState(), 99));
+    	returnList.addAll(populateLayer(Blocks.DIAMOND_BLOCK.getDefaultState(), 1));
         return returnList;
     }
 

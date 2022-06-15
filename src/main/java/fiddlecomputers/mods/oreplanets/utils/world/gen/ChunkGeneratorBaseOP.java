@@ -741,6 +741,17 @@ public abstract class ChunkGeneratorBaseOP implements IChunkGenerator
         }
         return false;
     }
+    
+    protected static List<IBlockState> populateLayer(IBlockState block, int n) {
+    	List<IBlockState> returnList = new ArrayList<IBlockState>();
+    	
+    	for(int i=0; i < n; i++) {
+    		returnList.add(block);
+    	}
+    	
+    	return returnList;
+    	
+    }
 
     /** POCKET GEN **/
 
