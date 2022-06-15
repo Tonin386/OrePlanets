@@ -24,7 +24,6 @@ import net.minecraft.util.text.TextFormatting;
 import net.minecraft.world.WorldProvider;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
-import fiddlecomputers.mods.oreplanets.config.ConfigManagerOP;
 import fiddlecomputers.mods.oreplanets.utils.ColorUtils;
 
 @SideOnly(Side.CLIENT)
@@ -41,7 +40,7 @@ public class GuiCelestialSelection extends GuiScreen
     public void initGui()
     {
         this.listCelestial.clear();
-        this.listCelestial.addAll(GalaxyRegistry.getRegisteredPlanets().values().stream().filter(planet -> planet.getDimensionID() != 0 && planet.getDimensionID() != ConfigManagerOP.oreplanets_dimension.idDimensionSpaceNether && planet.getReachable() && planet.getTierRequirement() > 0).collect(Collectors.toList()));
+        this.listCelestial.addAll(GalaxyRegistry.getRegisteredPlanets().values().stream().filter(planet -> planet.getDimensionID() != 0 && planet.getReachable() && planet.getTierRequirement() > 0).collect(Collectors.toList()));
         this.listCelestial.addAll(GalaxyRegistry.getRegisteredMoons().values().stream().filter(moon -> moon.getReachable() && moon.getTierRequirement() > 0).collect(Collectors.toList()));
         this.selectionList = new GuiListCelestialSelection(this, this.listCelestial, this.width, this.height, 48, this.height - 32, 36);
         this.doneButton = this.addButton(new GuiButton(0, this.width / 2 - 28, this.height - 26, 100, 20, "gui.done"));

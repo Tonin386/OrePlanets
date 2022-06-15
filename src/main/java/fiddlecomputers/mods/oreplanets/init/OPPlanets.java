@@ -18,7 +18,6 @@ public class OPPlanets {
     public static void init()
     {
         // Planets
-        OPPlanets.SPACE_NETHER = CelestialRegistryUtils.createPlanet("space_nether", GalacticraftCore.solarSystemSol, 0.0F, 0.25F, 1.0F, 1.0F, -1, ConfigManagerOP.oreplanets_dimension.idDimensionSpaceNether, WorldProviderSpaceNether.class);
         OPPlanets.DIAMONDPLANET = CelestialRegistryUtils.createPlanet("diamondplanet", GalacticraftCore.solarSystemSol, -14.25F, 4.25F, 20.0F, 0.876F, ConfigManagerOP.oreplanets_planet_settings.planetDiamondPlanetTier, ConfigManagerOP.oreplanets_dimension.idDimensionDiamondPlanet, WorldProviderDiamondPlanet.class);
         OPPlanets.EXANTERRA = CelestialRegistryUtils.createPlanet("exanterra", GalacticraftCore.solarSystemSol, 0F, 1.3F, 1.3F, 0.5F, ConfigManagerOP.oreplanets_planet_settings.planetExanterraTier, ConfigManagerOP.oreplanets_dimension.idDimensionExanterra, WorldProviderExanterra.class);
         

@@ -40,34 +40,7 @@ public class ChunkGeneratorDiamondPlanet extends ChunkGeneratorBaseOP
     @Override
     protected void populate(BlockPos pos, ChunkPos chunkpos, Biome biome, int chunkX, int chunkZ, int x, int z)
     {
-        //int y = this.rand.nextInt(this.rand.nextInt(248) + 8);
         this.abandonedSatellite.generateStructure(this.world, this.rand, chunkpos);
-
-//        if (this.rand.nextInt(4) == 0)
-//        {
-//            if (y < 48)
-//            {
-//                new WorldGenLiquidLake(MPBlocks.INFECTED_PURLONITE_WATER_FLUID_BLOCK.getDefaultState(), MPBlocks.DIONA_ROCK.getDefaultState(), false).generate(this.world, this.rand, pos.add(this.rand.nextInt(16) + 8, y, this.rand.nextInt(16) + 8));
-//            }
-//        }
-//        if (this.rand.nextInt(8) == 0)
-//        {
-//            if (y < 48)
-//            {
-//                new WorldGenLiquidLake(MPBlocks.INFECTED_PURLONITE_LAVA_FLUID_BLOCK.getDefaultState(), MPBlocks.DIONA_ROCK.getDefaultState(), true).generate(this.world, this.rand, pos.add(this.rand.nextInt(16) + 8, y, this.rand.nextInt(16) + 8));
-//            }
-//        }
-//        for (int i = 0; i < 8; ++i)
-//        {
-//            new WorldGenSpaceDungeons(MPBlocks.DIONA_ANCIENT_CHEST.getDefaultState(), MPBlocks.DIONA_COBBLESTONE.getDefaultState(), MPBlocks.ALBETIUS_WORM_EGG_ROCK.getDefaultState()).generate(this.world, this.rand, pos.add(this.rand.nextInt(16) + 8, this.rand.nextInt(256), this.rand.nextInt(16) + 8));
-//        }
-//        if (this.rand.nextInt(250) == 0)
-//        {
-//            int posX = this.rand.nextInt(16) + 8;
-//            int posZ = this.rand.nextInt(16) + 8;
-//            int posY = this.world.getTopSolidOrLiquidBlock(pos.add(posX, 0, posZ)).getY();
-//            new WorldGenCrashedAlienProbe().generate(this.world, this.rand, pos.add(posX, posY, posZ));
-//        }
     }
 
     @Override
@@ -103,7 +76,7 @@ public class ChunkGeneratorDiamondPlanet extends ChunkGeneratorBaseOP
     protected List<IBlockState> getTopBlocks()
     {
     	List<IBlockState> returnList = new ArrayList<IBlockState>();
-    	returnList.add(Blocks.DIAMOND_BLOCK.getDefaultState());
+    	returnList.add(Blocks.SAND.getDefaultState());
         return returnList;
     }
 
@@ -111,6 +84,9 @@ public class ChunkGeneratorDiamondPlanet extends ChunkGeneratorBaseOP
     protected List<IBlockState> getSubBlocks()
     {
     	List<IBlockState> returnList = new ArrayList<IBlockState>();
+    	returnList.add(Blocks.QUARTZ_BLOCK.getDefaultState());
+    	returnList.add(Blocks.QUARTZ_BLOCK.getDefaultState());
+    	returnList.add(Blocks.QUARTZ_BLOCK.getDefaultState());
     	returnList.add(Blocks.DIAMOND_BLOCK.getDefaultState());
         return returnList;
     }

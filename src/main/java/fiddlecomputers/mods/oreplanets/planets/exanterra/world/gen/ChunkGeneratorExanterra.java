@@ -46,7 +46,7 @@ public class ChunkGeneratorExanterra extends ChunkGeneratorBaseOP {
 
 	@Override
 	protected void preGenerateChunk(ChunkPrimer primer, int chunkX, int chunkZ) {
-		
+		this.createCraters(chunkX, chunkZ, primer);
 	}
 
 	@Override

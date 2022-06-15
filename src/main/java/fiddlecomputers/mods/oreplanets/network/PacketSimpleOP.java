@@ -25,7 +25,6 @@ import fiddlecomputers.mods.oreplanets.event.ClientEventHandler;
 import fiddlecomputers.mods.oreplanets.event.WorldTickEventHandler;
 import fiddlecomputers.mods.oreplanets.utils.LoggerOP;
 import fiddlecomputers.mods.oreplanets.utils.TeleportUtils;
-import fiddlecomputers.mods.oreplanets.utils.TeleporterSpaceNether;
 import fiddlecomputers.mods.oreplanets.utils.itemblocks.IItemRarity;
 import fiddlecomputers.mods.oreplanets.utils.ColorUtils;
 import fiddlecomputers.mods.oreplanets.utils.JsonUtils;
@@ -139,11 +138,6 @@ public class PacketSimpleOP extends PacketBase
                 WorldTickEventHandler.survivalPlanetData.disableMessage = true;
                 WorldTickEventHandler.survivalPlanetData.setDirty(true);
             }
-            break;
-        case S_TRANSFER_PLAYER:
-            int dimID = (int)this.data.get(0);
-            playerMP.server.getPlayerList().transferPlayerToDimension(playerMP, dimID, new TeleporterSpaceNether(playerMP.server.getWorld(dimID), player.getPosition(), player.world.provider));
-            GalacticraftCore.packetPipeline.sendTo(new PacketSimpleOP(EnumSimplePacketMP.C_RELOAD_RENDERER, player.dimension), playerMP);
             break;
         default:
             break;
