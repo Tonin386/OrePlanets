@@ -3,7 +3,6 @@ package fiddlecomputers.mods.oreplanets.planets.auraferrum.moon.world.gen;
 import java.util.ArrayList;
 import java.util.List;
 
-import buildcraft.api.BCBlocks;
 import fiddlecomputers.mods.oreplanets.utils.world.gen.ChunkGeneratorBaseOP;
 import micdoodle8.mods.galacticraft.core.GCBlocks;
 import micdoodle8.mods.galacticraft.core.blocks.BlockBasic;
