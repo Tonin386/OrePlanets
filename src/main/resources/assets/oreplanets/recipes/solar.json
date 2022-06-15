@@ -1,0 +1,23 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "pattern":
+    [
+        "   ",
+        "xxx",
+        "xxx"
+    ],
+    "key":
+    {
+        "x":
+        {
+            "item": "minecraft:daylight_detector",
+            "data": 0
+        }
+    },
+    "result":
+    {
+        "item": "galacticraftcore:solar",
+        "count": 1,
+        "data": 0
+    }
+}
