@@ -1,5 +1,6 @@
 package fiddlecomputers.mods.oreplanets.init;
 
+import micdoodle8.mods.galacticraft.api.galaxies.Moon;
 import micdoodle8.mods.galacticraft.api.galaxies.Planet;
 import micdoodle8.mods.galacticraft.api.world.EnumAtmosphericGas;
 import micdoodle8.mods.galacticraft.core.GalacticraftCore;
@@ -14,6 +15,8 @@ public class OPPlanets {
     public static Planet DIAMONDPLANET;
     public static Planet EXANTERRA;
     public static Planet AURAFERRUM;
+    
+    public static Moon AURAFERRUM_MOON;
  
     public static void init()
     {
@@ -21,6 +24,9 @@ public class OPPlanets {
         OPPlanets.DIAMONDPLANET = CelestialRegistryUtils.createPlanet("diamondplanet", GalacticraftCore.solarSystemSol, -14.25F, 4.25F, 20.0F, 0.876F, ConfigManagerOP.oreplanets_planet_settings.planetDiamondPlanetTier, ConfigManagerOP.oreplanets_dimension.idDimensionDiamondPlanet, WorldProviderDiamondPlanet.class);
         OPPlanets.EXANTERRA = CelestialRegistryUtils.createPlanet("exanterra", GalacticraftCore.solarSystemSol, 10F, 1.15F, 1.3F, 0.5F, ConfigManagerOP.oreplanets_planet_settings.planetExanterraTier, ConfigManagerOP.oreplanets_dimension.idDimensionExanterra, WorldProviderExanterra.class);
         OPPlanets.AURAFERRUM = CelestialRegistryUtils.createPlanet("auraferrum", GalacticraftCore.solarSystemSol, 0.65F, 0.65F, 0.65F, 2F, ConfigManagerOP.oreplanets_planet_settings.planetAuraferrumTier, ConfigManagerOP.oreplanets_dimension.idDimensionAuraferrum, WorldProviderAuraferrum.class);
+        
+        //Moons
+        OPPlanets.AURAFERRUM_MOON = CelestialRegistryUtils.createMoon("auraferrum_moon", AURAFERRUM, 1F, 1F, 1F, 1F, ConfigManagerOP.oreplanets_planet_settings.moonAuraferrumTier, ConfigManagerOP.oreplanets_dimension.idDimensionAuraferrumMoon, WorldProviderAuraferrumMoon.class);
         
         // Planets
         CelestialRegistryUtils.setAtmosphereComponentList(OPPlanets.DIAMONDPLANET, EnumAtmosphericGas.ARGON, EnumAtmosphericGas.HELIUM);
@@ -34,14 +40,21 @@ public class OPPlanets {
         CelestialRegistryUtils.setAtmosphereComponentList(OPPlanets.AURAFERRUM, EnumAtmosphericGas.ARGON, EnumAtmosphericGas.HELIUM);
         CelestialRegistryUtils.setAtmosphere(OPPlanets.AURAFERRUM, false, false, false, 0.0F, 0.0F, 0.0F);
         CelestialRegistryUtils.setChecklistKeys(OPPlanets.AURAFERRUM, "equip_oxygen_suit");
+
+        //Moons
+        CelestialRegistryUtils.setAtmosphereComponentList(OPPlanets.AURAFERRUM_MOON, EnumAtmosphericGas.ARGON, EnumAtmosphericGas.HELIUM);
+        CelestialRegistryUtils.setAtmosphere(OPPlanets.AURAFERRUM_MOON, false, false, false, 0.0F, 0.0F, 0.0F);
+        CelestialRegistryUtils.setChecklistKeys(OPPlanets.AURAFERRUM_MOON, "equip_oxygen_suit");
     }
 
     public static void register()
     {
         TeleportTypeMoon teleport = new TeleportTypeMoon();
 
+        //Solar systems
         CelestialRegistryUtils.registerSolarSystem(GalacticraftCore.solarSystemSol);
 
+        //Planets
         CelestialRegistryUtils.registerPlanet(OPPlanets.DIAMONDPLANET);
         CelestialRegistryUtils.registerTeleportType(WorldProviderDiamondPlanet.class, teleport);
         CelestialRegistryUtils.registerRocketGui(WorldProviderDiamondPlanet.class, "diamondplanet");
@@ -53,6 +66,11 @@ public class OPPlanets {
         CelestialRegistryUtils.registerPlanet(OPPlanets.AURAFERRUM);
         CelestialRegistryUtils.registerTeleportType(WorldProviderAuraferrum.class, teleport);
         CelestialRegistryUtils.registerRocketGui(WorldProviderAuraferrum.class, "auraferrum");
+
+        //Moons
+        CelestialRegistryUtils.registerMoon(OPPlanets.AURAFERRUM_MOON);
+        CelestialRegistryUtils.registerTeleportType(WorldProviderAuraferrumMoon.class, teleport);
+        CelestialRegistryUtils.registerRocketGui(WorldProviderAuraferrumMoon.class, "auraferrum_moon");
     }
 
 }

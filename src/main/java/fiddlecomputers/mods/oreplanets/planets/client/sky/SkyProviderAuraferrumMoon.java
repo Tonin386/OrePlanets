@@ -5,9 +5,9 @@ import net.minecraft.client.Minecraft;
 import net.minecraft.client.multiplayer.WorldClient;
 import net.minecraft.client.renderer.GlStateManager;
 
-public class SkyProviderAuraferrum extends SkyProviderBaseOP {
+public class SkyProviderAuraferrumMoon extends SkyProviderBaseOP {
 
-    public SkyProviderAuraferrum(float solarSize)
+	public SkyProviderAuraferrumMoon(float solarSize)
     {
         this.solarSize = 50.0F * solarSize;
     }
@@ -27,13 +27,13 @@ public class SkyProviderAuraferrum extends SkyProviderBaseOP {
     @Override
     protected float getStarBrightness()
     {
-        return 3F;
+        return 1.5F;
     }
 
     @Override
     protected int getStarCount()
     {
-        return 200;
+        return 150;
     }
 
     @Override
