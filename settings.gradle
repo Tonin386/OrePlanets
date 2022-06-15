@@ -11,6 +11,10 @@ pluginManagement {
 		maven {
 			url = 'https://repo.galacticraft.net/repository/maven-common/'
 		}
+	    maven {
+	        name "Buildcraft"
+	        url "https://mod-buildcraft.com/maven/"
+	    }
 		resolutionStrategy {
 			eachPlugin {
 				if (requested.id.id == "net.minecraftforge.gradle") {

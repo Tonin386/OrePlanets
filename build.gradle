@@ -52,8 +52,18 @@ minecraft {
 
 sourceSets.main.resources { srcDir 'src/generated/resources' }
 
+repositories {
+    maven { 
+        name 'buildcraft'
+        url 'https://mod-buildcraft.com/maven/' 
+        content { includeGroup 'com.mod-buildcraft' }
+    }
+}
+
 dependencies {
     minecraft "net.minecraftforge:forge:${minecraft_version}-${forge_version}"
+    
+    implementation fg.deobf('com.mod-buildcraft:buildcraft-main:7.99.24.8')
 }
 
 def resourceTargets = ['mcmod.info', 'pack.mcmeta']

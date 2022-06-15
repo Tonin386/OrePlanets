@@ -3,7 +3,11 @@ package fiddlecomputers.mods.oreplanets.planets.exanterra.world.gen;
 import java.util.ArrayList;
 import java.util.List;
 
+import buildcraft.energy.BCEnergyFluids;
+import buildcraft.energy.generation.OilGenStructure;
+import buildcraft.energy.generation.OilGenerator;
 import fiddlecomputers.mods.oreplanets.utils.world.gen.ChunkGeneratorBaseOP;
+import fiddlecomputers.mods.oreplanets.world.gen.WorldGenLiquidLake;
 import net.minecraft.block.BlockLog.EnumAxis;
 import net.minecraft.block.BlockNewLog;
 import net.minecraft.block.BlockOldLog;
@@ -52,7 +56,30 @@ public class ChunkGeneratorExanterra extends ChunkGeneratorBaseOP {
 
 	@Override
 	protected void populate(BlockPos pos, ChunkPos chunkpos, Biome biome, int chunkX, int chunkZ, int x, int z) {
-		// TODO Try to create oil lakes using WorldGenLiquidLake
+        int y = this.rand.nextInt(this.rand.nextInt(248) + 8);
+        if (this.rand.nextInt(8) == 0)
+        {
+            if (y < 90)
+            {
+            	int sphereBase = this.rand.nextInt(10) + 30;
+            	
+            	OilGenStructure spring = OilGenerator.createSpring(pos.add(0, y, 0));
+            	spring.generate(this.world, spring.box);
+            	
+            	OilGenStructure tube = OilGenerator.createTubeY(pos.add(0, sphereBase, 0), y-25, this.rand.nextInt(1) + 1);
+            	tube.generate(this.world, tube.box);
+            	
+            	OilGenStructure sphere = OilGenerator.createSphere(pos.add(0, sphereBase, 0), this.rand.nextInt(7) + 3);
+            	sphere.generate(this.world, sphere.box);
+            }
+        }
+        if (this.rand.nextInt(8) == 0)
+        {
+            if (y > 60)
+            {
+                new WorldGenLiquidLake(BCEnergyFluids.crudeOil[0].getBlock().getDefaultState(), Blocks.LOG2.getDefaultState(), false).generate(this.world, this.rand, pos.add(this.rand.nextInt(16) + 8, y, this.rand.nextInt(16) + 8));    	
+            }
+        }
 		
 	}
 
