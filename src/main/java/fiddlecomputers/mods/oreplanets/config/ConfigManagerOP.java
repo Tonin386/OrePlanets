@@ -70,6 +70,9 @@ public class ConfigManagerOP
         
         @Config.Name(value = "Auraferrum Dimension ID")
         public int idDimensionAuraferrum = -2544;
+        
+        @Config.Name(value = "Auraferrum Moon Dimension ID")
+        public int idDimensionAuraferrumMoon = -25440;
     }
 
     // Planet Settings
@@ -87,6 +90,10 @@ public class ConfigManagerOP
         @Config.Name(value = "Auraferrum Planet Tier")
         @Config.RequiresMcRestart
         public int planetAuraferrumTier = 2;
+
+        @Config.Name(value = "Auraferrum Moon Tier")
+        @Config.RequiresMcRestart
+        public int moonAuraferrumTier = 2;
     }
 
     // World Gen Settings
@@ -104,6 +111,9 @@ public class ConfigManagerOP
         
         @Config.Name(value = "Enable Common Ore on Auraferrum")
         public boolean enableCommonAuraferrumOre = true;
+        
+        @Config.Name(value = "Enable Common Ore on Auraferrum moon")
+        public boolean enableCommonAuraferrumMoonOre = true;
     }
 
     // Others
