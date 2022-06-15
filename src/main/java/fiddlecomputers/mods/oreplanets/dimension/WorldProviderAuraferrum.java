@@ -6,9 +6,9 @@ import java.util.List;
 import fiddlecomputers.mods.oreplanets.config.ConfigManagerOP;
 import fiddlecomputers.mods.oreplanets.init.OPDimensions;
 import fiddlecomputers.mods.oreplanets.init.OPPlanets;
-import fiddlecomputers.mods.oreplanets.planets.client.sky.SkyProviderExanterra;
-import fiddlecomputers.mods.oreplanets.planets.exanterra.world.gen.BiomeProviderExanterra;
-import fiddlecomputers.mods.oreplanets.planets.exanterra.world.gen.ChunkGeneratorExanterra;
+import fiddlecomputers.mods.oreplanets.planets.auraferrum.world.gen.BiomeProviderAuraferrum;
+import fiddlecomputers.mods.oreplanets.planets.auraferrum.world.gen.ChunkGeneratorAuraferrum;
+import fiddlecomputers.mods.oreplanets.planets.client.sky.SkyProviderAuraferrum;
 import fiddlecomputers.mods.oreplanets.utils.dimension.WorldProviderOP;
 import micdoodle8.mods.galacticraft.api.galaxies.CelestialBody;
 import micdoodle8.mods.galacticraft.api.vector.Vector3;
@@ -20,7 +20,7 @@ import net.minecraft.world.gen.IChunkGenerator;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
-public class WorldProviderExanterra extends WorldProviderOP {
+public class WorldProviderAuraferrum extends WorldProviderOP {
 
     @Override
     public Vector3 getFogColor()
@@ -32,13 +32,13 @@ public class WorldProviderExanterra extends WorldProviderOP {
     @Override
     public Vector3 getSkyColor()
     {
-        return new Vector3(119 / 255F, 191 / 255F, 200 / 255F);
+        return new Vector3(216 / 255F, 67 / 255F, 19 / 255F);
     }
 
     @Override
     public long getDayLength()
     {
-        return 25000L;
+        return (long) (24000L * 0.65);
     }
 
     @Override
@@ -59,37 +59,37 @@ public class WorldProviderExanterra extends WorldProviderOP {
         float value = 1.0F - (MathHelper.cos(angle * ((float)Math.PI * 2.0F)) * 2.0F + 0.1F);
         value = MathHelper.clamp(value, 0.55F, 1.0F);
         value = 1.0F - value;
-        return value * 0.9F;
+        return value * 1.9F;
     }
 
     @Override
     public double getSolarEnergyMultiplier()
     {
-        return 1.25D;
+        return 3D;
     }
 
     @Override
     public float getGravity()
     {
-        return 0.008F;
+        return 0.0125F;
     }
 
     @Override
     public boolean canSpaceshipTierPass(int tier)
     {
-        return tier >= ConfigManagerOP.oreplanets_planet_settings.planetExanterraTier;
+        return tier >= ConfigManagerOP.oreplanets_planet_settings.planetAuraferrumTier;
     }
 
     @Override
     public float getFallDamageModifier()
     {
-        return 1.0F;
+        return 1.5F;
     }
 
     @Override
     public CelestialBody getCelestialBody()
     {
-        return OPPlanets.EXANTERRA;
+        return OPPlanets.AURAFERRUM;
     }
 
     @Override
@@ -97,42 +97,42 @@ public class WorldProviderExanterra extends WorldProviderOP {
     {
         if (this.isDaytime())
         {
-            return -0.05F;
+            return 0.25F;
         }
         else
         {
-            return -0.25F;
+            return 0.05F;
         }
     }
 
     @Override
     protected void renderSky()
     {
-        this.setSkyRenderer(new SkyProviderExanterra(this.getSolarSize()));
+        this.setSkyRenderer(new SkyProviderAuraferrum(this.getSolarSize()));
     }
 
     @Override
     public void init()
     {
         super.init();
-        this.biomeProvider = new BiomeProviderExanterra();
+        this.biomeProvider = new BiomeProviderAuraferrum();
     }
 
     @Override
     public IChunkGenerator createChunkGenerator()
     {
-        return new ChunkGeneratorExanterra(this.world, this.world.getSeed());
+        return new ChunkGeneratorAuraferrum(this.world, this.world.getSeed());
     }
 
     @Override
     public DimensionType getDimensionType()
     {
-        return OPDimensions.EXANTERRA;
+        return OPDimensions.AURAFERRUM;
     }
 
     @Override
     public List<Block> getSurfaceBlocks()
     {
-    	return Arrays.asList(Blocks.LOG);
+    	return Arrays.asList(Blocks.STONE);
     }
 }
