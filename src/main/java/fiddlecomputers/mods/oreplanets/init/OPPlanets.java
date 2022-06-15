@@ -19,9 +19,8 @@ public class OPPlanets {
     {
         // Planets
         OPPlanets.DIAMONDPLANET = CelestialRegistryUtils.createPlanet("diamondplanet", GalacticraftCore.solarSystemSol, -14.25F, 4.25F, 20.0F, 0.876F, ConfigManagerOP.oreplanets_planet_settings.planetDiamondPlanetTier, ConfigManagerOP.oreplanets_dimension.idDimensionDiamondPlanet, WorldProviderDiamondPlanet.class);
-        OPPlanets.EXANTERRA = CelestialRegistryUtils.createPlanet("exanterra", GalacticraftCore.solarSystemSol, 0F, 1.15F, 1.3F, 0.5F, ConfigManagerOP.oreplanets_planet_settings.planetExanterraTier, ConfigManagerOP.oreplanets_dimension.idDimensionExanterra, WorldProviderExanterra.class);
-        //TODO custom planet orbit
-        OPPlanets.AURAFERRUM = CelestialRegistryUtils.createPlanet("auraferrum", GalacticraftCore.solarSystemSol, 0F, 0F, 0F, 0F, ConfigManagerOP.oreplanets_planet_settings.planetAuraferrumTier, ConfigManagerOP.oreplanets_dimension.idDimensionAuraferrum, WorldProviderAuraferrum.class);
+        OPPlanets.EXANTERRA = CelestialRegistryUtils.createPlanet("exanterra", GalacticraftCore.solarSystemSol, 10F, 1.15F, 1.3F, 0.5F, ConfigManagerOP.oreplanets_planet_settings.planetExanterraTier, ConfigManagerOP.oreplanets_dimension.idDimensionExanterra, WorldProviderExanterra.class);
+        OPPlanets.AURAFERRUM = CelestialRegistryUtils.createPlanet("auraferrum", GalacticraftCore.solarSystemSol, 0.65F, 0.65F, 0.65F, 2F, ConfigManagerOP.oreplanets_planet_settings.planetAuraferrumTier, ConfigManagerOP.oreplanets_dimension.idDimensionAuraferrum, WorldProviderAuraferrum.class);
         
         // Planets
         CelestialRegistryUtils.setAtmosphereComponentList(OPPlanets.DIAMONDPLANET, EnumAtmosphericGas.ARGON, EnumAtmosphericGas.HELIUM);

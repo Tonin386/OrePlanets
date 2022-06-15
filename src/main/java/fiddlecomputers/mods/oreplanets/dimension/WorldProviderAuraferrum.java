@@ -8,6 +8,7 @@ import fiddlecomputers.mods.oreplanets.init.OPDimensions;
 import fiddlecomputers.mods.oreplanets.init.OPPlanets;
 import fiddlecomputers.mods.oreplanets.planets.auraferrum.world.gen.BiomeProviderAuraferrum;
 import fiddlecomputers.mods.oreplanets.planets.auraferrum.world.gen.ChunkGeneratorAuraferrum;
+import fiddlecomputers.mods.oreplanets.planets.client.sky.SkyProviderAuraferrum;
 import fiddlecomputers.mods.oreplanets.utils.dimension.WorldProviderOP;
 import micdoodle8.mods.galacticraft.api.galaxies.CelestialBody;
 import micdoodle8.mods.galacticraft.api.vector.Vector3;
@@ -21,8 +22,6 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 
 public class WorldProviderAuraferrum extends WorldProviderOP {
 
-
-	//TODO not important
     @Override
     public Vector3 getFogColor()
     {
@@ -30,20 +29,18 @@ public class WorldProviderAuraferrum extends WorldProviderOP {
         return new Vector3(24.0D / 255.0D * f, 24.0D / 255.0D * f, 24.0D / 255.0D * f);
     }
 
-    //TODO not important
     @Override
     public Vector3 getSkyColor()
     {
-        return new Vector3(0, 0, 0);
+        return new Vector3(216 / 255F, 67 / 255F, 19 / 255F);
     }
 
     @Override
     public long getDayLength()
     {
-        return 20000L;
+        return (long) (24000L * 0.65);
     }
 
-    //TODO not important
     @Override
     @SideOnly(Side.CLIENT)
     public float getStarBrightness(float partialTicks)
@@ -54,7 +51,6 @@ public class WorldProviderAuraferrum extends WorldProviderOP {
         return value * value * 0.5F + 0.3F;
     }
 
-    //TODO not important
     @Override
     @SideOnly(Side.CLIENT)
     public float getSunBrightness(float partialTicks)
@@ -109,11 +105,10 @@ public class WorldProviderAuraferrum extends WorldProviderOP {
         }
     }
 
-    //TODO not important
     @Override
     protected void renderSky()
     {
-        //this.setSkyRenderer(new SkyProviderExanterra(this.getSolarSize()));
+        this.setSkyRenderer(new SkyProviderAuraferrum(this.getSolarSize()));
     }
 
     @Override

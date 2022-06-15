@@ -17,7 +17,6 @@ import fiddlecomputers.mods.oreplanets.planets.diamondplanet.world.gen.structure
 import fiddlecomputers.mods.oreplanets.utils.world.gen.ChunkGeneratorBaseOP;
 import fiddlecomputers.mods.oreplanets.world.gen.WorldGenLiquidLake;
 
-//TODO try to populate with frozen lakes
 public class ChunkGeneratorDiamondPlanet extends ChunkGeneratorBaseOP
 {
     private final MapGenAbandonedSatellite abandonedSatellite = new MapGenAbandonedSatellite();

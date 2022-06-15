@@ -6,6 +6,7 @@ import java.util.List;
 import fiddlecomputers.mods.oreplanets.config.ConfigManagerOP;
 import fiddlecomputers.mods.oreplanets.init.OPDimensions;
 import fiddlecomputers.mods.oreplanets.init.OPPlanets;
+import fiddlecomputers.mods.oreplanets.planets.client.sky.SkyProviderExanterra;
 import fiddlecomputers.mods.oreplanets.planets.exanterra.world.gen.BiomeProviderExanterra;
 import fiddlecomputers.mods.oreplanets.planets.exanterra.world.gen.ChunkGeneratorExanterra;
 import fiddlecomputers.mods.oreplanets.utils.dimension.WorldProviderOP;
@@ -21,7 +22,6 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 
 public class WorldProviderExanterra extends WorldProviderOP {
 
-	//TODO
     @Override
     public Vector3 getFogColor()
     {
@@ -29,11 +29,10 @@ public class WorldProviderExanterra extends WorldProviderOP {
         return new Vector3(24.0D / 255.0D * f, 24.0D / 255.0D * f, 24.0D / 255.0D * f);
     }
 
-    //TODO
     @Override
     public Vector3 getSkyColor()
     {
-        return new Vector3(0, 0, 0);
+        return new Vector3(119 / 255F, 191 / 255F, 200 / 255F);
     }
 
     @Override
@@ -42,7 +41,6 @@ public class WorldProviderExanterra extends WorldProviderOP {
         return 25000L;
     }
 
-    //TODO
     @Override
     @SideOnly(Side.CLIENT)
     public float getStarBrightness(float partialTicks)
@@ -53,7 +51,6 @@ public class WorldProviderExanterra extends WorldProviderOP {
         return value * value * 0.5F + 0.3F;
     }
 
-    //TODO
     @Override
     @SideOnly(Side.CLIENT)
     public float getSunBrightness(float partialTicks)
@@ -108,11 +105,10 @@ public class WorldProviderExanterra extends WorldProviderOP {
         }
     }
 
-    //TODO
     @Override
     protected void renderSky()
     {
-        //this.setSkyRenderer(new SkyProviderExanterra(this.getSolarSize()));
+        this.setSkyRenderer(new SkyProviderExanterra(this.getSolarSize()));
     }
 
     @Override
