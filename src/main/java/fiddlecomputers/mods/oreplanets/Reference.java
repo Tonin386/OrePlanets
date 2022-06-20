@@ -22,10 +22,10 @@ public class Reference {
     // MOD ID's
     public static final String MOD_FORGE = "forge";
     public static final String MOD_FORGE_VERSION = "@FORGE_VERSION@";
-    public static final String MOD_FORGE_VERSION_MIN = "14.23.5.2860";
+    public static final String MOD_FORGE_VERSION_MIN = "14.23.5.2859";
     
     public static final String MOD_GALACTICRAFT = "galacticraftcore";
-    public static final String MOD_GALACTICRAFT_VERSION_MIN = "@GC_VERSION@";
+    public static final String MOD_GALACTICRAFT_VERSION_MIN = "4.0.2.280";
     
     public static final String FORGE_DEPENDENCY = "required-after:" + MOD_FORGE + "@[" + MOD_FORGE_VERSION_MIN + ",); ";
     public static final String GC_DEPENDENCY = "required-after:" + MOD_GALACTICRAFT + "@[" + MOD_GALACTICRAFT_VERSION_MIN + ",); ";

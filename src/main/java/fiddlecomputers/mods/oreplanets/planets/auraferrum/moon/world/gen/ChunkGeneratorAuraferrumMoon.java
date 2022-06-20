@@ -6,6 +6,8 @@ import java.util.List;
 import fiddlecomputers.mods.oreplanets.utils.world.gen.ChunkGeneratorBaseOP;
 import micdoodle8.mods.galacticraft.core.GCBlocks;
 import micdoodle8.mods.galacticraft.core.blocks.BlockBasic;
+import micdoodle8.mods.galacticraft.planets.mars.blocks.BlockBasicMars;
+import micdoodle8.mods.galacticraft.planets.mars.blocks.MarsBlocks;
 import net.minecraft.block.BlockStone;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.init.Blocks;
@@ -65,6 +67,7 @@ public class ChunkGeneratorAuraferrumMoon extends ChunkGeneratorBaseOP {
 		returnList.addAll(populateLayer(GCBlocks.basicBlock.getDefaultState().withProperty(BlockBasic.BASIC_TYPE, BlockBasic.EnumBlockBasic.ORE_COPPER), 5));
 		returnList.addAll(populateLayer(GCBlocks.basicBlock.getDefaultState().withProperty(BlockBasic.BASIC_TYPE, BlockBasic.EnumBlockBasic.ORE_TIN), 5));
 		returnList.addAll(populateLayer(GCBlocks.basicBlock.getDefaultState().withProperty(BlockBasic.BASIC_TYPE, BlockBasic.EnumBlockBasic.ORE_SILICON), 5));
+		returnList.addAll(populateLayer(MarsBlocks.marsBlock.getDefaultState().withProperty(BlockBasicMars.BASIC_TYPE, BlockBasicMars.EnumBlockBasic.ORE_DESH), 5));
 		
 		return returnList;
 	}
@@ -79,10 +82,12 @@ public class ChunkGeneratorAuraferrumMoon extends ChunkGeneratorBaseOP {
 		returnList.addAll(populateLayer(GCBlocks.basicBlock.getDefaultState().withProperty(BlockBasic.BASIC_TYPE, BlockBasic.EnumBlockBasic.ORE_COPPER), 5));
 		returnList.addAll(populateLayer(GCBlocks.basicBlock.getDefaultState().withProperty(BlockBasic.BASIC_TYPE, BlockBasic.EnumBlockBasic.ORE_TIN), 5));
 		returnList.addAll(populateLayer(GCBlocks.basicBlock.getDefaultState().withProperty(BlockBasic.BASIC_TYPE, BlockBasic.EnumBlockBasic.ORE_SILICON), 5));
+		returnList.addAll(populateLayer(MarsBlocks.marsBlock.getDefaultState().withProperty(BlockBasicMars.BASIC_TYPE, BlockBasicMars.EnumBlockBasic.ORE_DESH), 5));
 		returnList.addAll(populateLayer(GCBlocks.basicBlock.getDefaultState().withProperty(BlockBasic.BASIC_TYPE, BlockBasic.EnumBlockBasic.DECO_BLOCK_ALUMINUM), 1));
 		returnList.addAll(populateLayer(GCBlocks.basicBlock.getDefaultState().withProperty(BlockBasic.BASIC_TYPE, BlockBasic.EnumBlockBasic.DECO_BLOCK_COPPER), 1));
 		returnList.addAll(populateLayer(GCBlocks.basicBlock.getDefaultState().withProperty(BlockBasic.BASIC_TYPE, BlockBasic.EnumBlockBasic.DECO_BLOCK_TIN), 1));
 		returnList.addAll(populateLayer(GCBlocks.basicBlock.getDefaultState().withProperty(BlockBasic.BASIC_TYPE, BlockBasic.EnumBlockBasic.DECO_BLOCK_SILICON), 1));
+		returnList.addAll(populateLayer(MarsBlocks.marsBlock.getDefaultState().withProperty(BlockBasicMars.BASIC_TYPE, BlockBasicMars.EnumBlockBasic.DESH_BLOCK), 1));
 		
 		return returnList;
 	}
@@ -97,10 +102,13 @@ public class ChunkGeneratorAuraferrumMoon extends ChunkGeneratorBaseOP {
 		returnList.addAll(populateLayer(GCBlocks.basicBlock.getDefaultState().withProperty(BlockBasic.BASIC_TYPE, BlockBasic.EnumBlockBasic.ORE_COPPER), 15));
 		returnList.addAll(populateLayer(GCBlocks.basicBlock.getDefaultState().withProperty(BlockBasic.BASIC_TYPE, BlockBasic.EnumBlockBasic.ORE_TIN), 15));
 		returnList.addAll(populateLayer(GCBlocks.basicBlock.getDefaultState().withProperty(BlockBasic.BASIC_TYPE, BlockBasic.EnumBlockBasic.ORE_SILICON), 15));
+		returnList.addAll(populateLayer(MarsBlocks.marsBlock.getDefaultState().withProperty(BlockBasicMars.BASIC_TYPE, BlockBasicMars.EnumBlockBasic.ORE_DESH), 15));
 		returnList.addAll(populateLayer(GCBlocks.basicBlock.getDefaultState().withProperty(BlockBasic.BASIC_TYPE, BlockBasic.EnumBlockBasic.DECO_BLOCK_ALUMINUM), 5));
 		returnList.addAll(populateLayer(GCBlocks.basicBlock.getDefaultState().withProperty(BlockBasic.BASIC_TYPE, BlockBasic.EnumBlockBasic.DECO_BLOCK_COPPER), 5));
 		returnList.addAll(populateLayer(GCBlocks.basicBlock.getDefaultState().withProperty(BlockBasic.BASIC_TYPE, BlockBasic.EnumBlockBasic.DECO_BLOCK_TIN), 5));
 		returnList.addAll(populateLayer(GCBlocks.basicBlock.getDefaultState().withProperty(BlockBasic.BASIC_TYPE, BlockBasic.EnumBlockBasic.DECO_BLOCK_SILICON), 5));;
+		returnList.addAll(populateLayer(MarsBlocks.marsBlock.getDefaultState().withProperty(BlockBasicMars.BASIC_TYPE, BlockBasicMars.EnumBlockBasic.DESH_BLOCK), 5));
+		
 		
 		return returnList;
 	}

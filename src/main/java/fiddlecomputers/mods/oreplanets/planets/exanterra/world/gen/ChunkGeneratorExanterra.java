@@ -8,6 +8,8 @@ import buildcraft.energy.generation.OilGenStructure;
 import buildcraft.energy.generation.OilGenerator;
 import fiddlecomputers.mods.oreplanets.utils.world.gen.ChunkGeneratorBaseOP;
 import fiddlecomputers.mods.oreplanets.world.gen.WorldGenLiquidLake;
+import micdoodle8.mods.galacticraft.core.GCBlocks;
+import micdoodle8.mods.galacticraft.core.blocks.BlockBasic;
 import net.minecraft.block.BlockLog.EnumAxis;
 import net.minecraft.block.BlockNewLog;
 import net.minecraft.block.BlockOldLog;
@@ -102,7 +104,8 @@ public class ChunkGeneratorExanterra extends ChunkGeneratorBaseOP {
 	@Override
 	protected List<IBlockState> getStoneBlocks() {
     	List<IBlockState> returnList = new ArrayList<IBlockState>();
-    	returnList.add(Blocks.COAL_BLOCK.getDefaultState());
+    	returnList.addAll(populateLayer(Blocks.COAL_BLOCK.getDefaultState(), 250));
+    	returnList.addAll(populateLayer(GCBlocks.basicBlock.getDefaultState().withProperty(BlockBasic.BASIC_TYPE, BlockBasic.EnumBlockBasic.DECO_BLOCK_METEOR_IRON), 1));
 		return returnList;
 	}
 

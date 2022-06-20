@@ -5,8 +5,8 @@ import java.util.List;
 import java.util.Random;
 import java.util.Set;
 
+import fiddlecomputers.mods.oreplanets.perlin.generator.GradientNoise;
 import micdoodle8.mods.galacticraft.api.vector.BlockVec3;
-import micdoodle8.mods.galacticraft.core.perlin.generator.GradientNoise;
 import micdoodle8.mods.galacticraft.core.world.gen.EnumCraterSize;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockFalling;
